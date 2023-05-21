@@ -1,0 +1,55 @@
+{
+  "id": "page",
+  "label": "Page",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title",
+          "placeholder": "Enter page title",
+          "allowTargetBlank": true,
+          "single": "heading1"
+        }
+      },
+      "uid": { "type": "UID", "config": { "label": "uid", "placeholder": "" } },
+      "subdirectory": {
+        "type": "Text",
+        "config": {
+          "label": "Subdirectory",
+          "placeholder": "Separate words with hyphen"
+        }
+      },
+      "hidetitle": {
+        "type": "Boolean",
+        "config": {
+          "label": "HideTitle",
+          "placeholder_false": "Show",
+          "placeholder_true": "Hide",
+          "default_value": false
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": { "choices": { "content": { "type": "SharedSlice" } } }
+      }
+    },
+    "SEO": {
+      "metadescription": {
+        "type": "Text",
+        "config": { "label": "MetaDescription", "placeholder": "" }
+      },
+      "metaimage": {
+        "type": "Image",
+        "config": { "label": "MetaImage", "constraint": {}, "thumbnails": [] }
+      },
+      "canonical": {
+        "type": "Text",
+        "config": { "label": "Canonical", "placeholder": "" }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "homepage",
+  "label": "Homepage",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": { "choices": { "content": { "type": "SharedSlice" } } }
+      }
+    },
+    "SEO": {
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title",
+          "placeholder": "Enter page title",
+          "allowTargetBlank": true,
+          "single": "heading1"
+        }
+      },
+      "metadescription": {
+        "type": "Text",
+        "config": { "label": "MetaDescription", "placeholder": "" }
+      },
+      "metaimage": {
+        "type": "Image",
+        "config": { "label": "MetaImage", "constraint": {}, "thumbnails": [] }
+      },
+      "sitetitle": {
+        "type": "StructuredText",
+        "config": {
+          "label": "SiteTitle",
+          "placeholder": "Enter the site title",
+          "allowTargetBlank": true,
+          "single": "heading1"
+        }
+      },
+      "siteurl": {
+        "type": "Text",
+        "config": { "label": "SiteUrl", "placeholder": "" }
+      },
+      "canonical": {
+        "type": "Text",
+        "config": { "label": "canonical", "placeholder": "" }
+      }
+    }
+  }
+}
