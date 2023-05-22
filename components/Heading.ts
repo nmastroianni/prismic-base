@@ -1,7 +1,7 @@
 import React, { HTMLAttributes } from 'react'
-import { Roboto_Serif } from 'next/font/google'
+import { Petrona } from 'next/font/google'
 
-const serif = Roboto_Serif({ subsets: ['latin'] })
+const serif = Petrona({ subsets: ['latin'] })
 
 interface Props extends HTMLAttributes<HTMLHeadingElement> {
   as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
