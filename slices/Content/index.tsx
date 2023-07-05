@@ -1,7 +1,7 @@
 import { Content } from '@prismicio/client'
 import { SliceComponentProps } from '@prismicio/react'
-import { PrismicRichText } from '@prismicio/react'
-import { richTextComponents } from '@/lib/richTextComponents'
+import { PrismicRichText } from '@/components/PrismicRichText'
+import { Section } from '@/components/Section'
 
 /**
  * Props for `Content`.
@@ -13,15 +13,15 @@ export type ContentProps = SliceComponentProps<Content.ContentSlice>
  */
 const Content = ({ slice }: ContentProps): JSX.Element => {
   return (
-    <section
+    <Section
+      width="full"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <PrismicRichText
-        field={slice.primary.content}
-        components={richTextComponents}
-      />
-    </section>
+      <div className="prose mx-auto md:prose-lg lg:prose-xl">
+        <PrismicRichText field={slice.primary.content} />
+      </div>
+    </Section>
   )
 }
 

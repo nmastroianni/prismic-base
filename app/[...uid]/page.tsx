@@ -4,7 +4,6 @@ import { PageDocument } from '@/prismicio-types'
 import { SliceZone } from '@prismicio/react'
 import { components } from '@/slices'
 import { asText } from '@prismicio/client'
-import { Heading } from '@/components/Heading'
 
 type Props = {
   params: { uid: string }
@@ -27,10 +26,9 @@ export async function generateMetadata(
   const previousOpenGraph = previousMeta?.openGraph
   let metaImages = []
   if (metaimage.url) {
-    metaImages.push(metaimage)
+    metaImages.push(`${metaimage}`)
   } else if (previousOpenGraph?.images) {
-    console.log('metaimage is false')
-    metaImages.push(previousOpenGraph?.images[0])
+    metaImages.push(`${previousOpenGraph?.images[0]}`)
   }
 
   return {
