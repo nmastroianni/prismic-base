@@ -1,4 +1,6 @@
 import '@/app/globals.css'
+import { PrismicPreview } from '@prismicio/next'
+import { repositoryName } from '@/prismicio'
 import { Metadata, ResolvingMetadata } from 'next'
 import { Inter } from 'next/font/google'
 import { createClient } from '@/prismicio'
@@ -15,7 +17,7 @@ const client = createClient()
 
 export async function generateMetadata(
   { params, searchParams }: Props,
-  parent?: ResolvingMetadata
+  parent?: ResolvingMetadata,
 ): Promise<Metadata> {
   const homepage: HomepageDocument = await client.getSingle('homepage')
   const {
@@ -43,7 +45,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en-CA">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <PrismicPreview repositoryName={repositoryName} />
+      </body>
     </html>
   )
 }
